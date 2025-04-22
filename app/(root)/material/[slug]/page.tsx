@@ -21,7 +21,7 @@ function Page() {
     const [material, setMaterial] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/${slug}/`)
+        fetch(`http://51.21.127.208/api/${slug}/`)
         .then((response) => response.json())
         .then((data) => setMaterial(data.data))
         .catch((error) => console.error("Error", error));
@@ -33,7 +33,7 @@ function Page() {
     const [snippets, setSnippets] = useState<SnippetType[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/materials/${slug}/snippets/`)
+        fetch(`http://51.21.127.208/api/materials/${slug}/snippets/`)
             .then((response) => response.json())
             .then((data) => setSnippets(data.data))
             .catch((error) => console.error("Error", error));

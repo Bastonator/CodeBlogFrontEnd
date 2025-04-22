@@ -2,6 +2,7 @@
 import Search from "@/app/components/Search";
 import MaterialCard from "@/app/components/MaterialCard";
 import {useEffect, useState} from "react";
+import Link from "next/link";
 
 
 export type MaterialType = {
@@ -19,7 +20,7 @@ export default function Home() {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/")
+        fetch("http://51.21.127.208/api/")
             .then((response) => response.json())
             .then((data) => setMaterials(data.data))
             .catch((error) => console.error("Error", error));
@@ -47,8 +48,12 @@ export default function Home() {
                   Search it and Learn it.
               </h1>
               <p className={"sub-heading !max-w-3xl"}>
-                  Search for subjects, read about them and implement them in your code
+                  Search for subjects, read about them and implement them in your code,
+                  Or if you want an in-person teaching lesson with professional developers, enroll now.
               </p>
+                  <button className={"mt-3 -mb-2 bg-blue-300 text-24-black font-bold border border-neutral-500 rounded-3xl w-2/6 hover:bg-black hover:text-white transition"}>
+                      Enroll now.
+                  </button>
               <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           </section>
 
