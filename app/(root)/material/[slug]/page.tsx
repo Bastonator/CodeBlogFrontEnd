@@ -27,8 +27,6 @@ function Page() {
         .catch((error) => console.error("Error", error));
     }, [slug]);
 
-    console.log(material.category)
-
 
     const [snippets, setSnippets] = useState<SnippetType[]>([]);
 
