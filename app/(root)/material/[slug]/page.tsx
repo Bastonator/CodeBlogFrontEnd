@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "next/navigation";
 import Snippets from "@/app/components/Snippets";
 import MaterialDetail from "@/app/components/MaterialDetail";
+import {MaterialType} from "@/app/(root)/page";
 
 
 
@@ -19,7 +20,7 @@ function Page() {
 
     const {slug} = useParams()
 
-    const [material, setMaterial] = useState({});
+    const [material, setMaterial] = useState<MaterialType | null>(null);
 
     useEffect(() => {
         fetch(`http://51.21.127.208/api/${slug}/`)
@@ -40,15 +41,16 @@ function Page() {
 
     console.log(snippets)
 
-    if (!material) return <div>Loading...</div>;
-
+    if (!material) {
+        return <div>Loading...</div>;
+    }
     return (
         <>
 
             <MaterialDetail material={material}/>
 
             {snippets.map(snippet => {
-                return <Snippets snippet={snippet}/>
+                return <Snippets key={snippet.id} snippet={snippet}/>
             })}
         </>
     )
