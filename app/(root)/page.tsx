@@ -61,9 +61,12 @@ export default function Home() {
               <p className={"text-30-semibold"}>
                   All Materials
               </p>
-              <ul className={"mt-7 card_grid"}>
-                  <MaterialCard materials={filteredMaterials}/>
+              <ul className="mt-7 card_grid">
+                  {filteredMaterials.map((material) => (
+                      <MaterialCard key={material.slug} material={material}/>
+                  ))}
               </ul>
+
           </section>
       </>
   );
