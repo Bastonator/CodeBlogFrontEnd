@@ -2,9 +2,8 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "next/navigation";
 import Snippets from "@/app/components/Snippets";
-import Link from "next/link";
-import MaterialCard from "@/app/components/MaterialCard";
 import MaterialDetail from "@/app/components/MaterialDetail";
+
 
 
 export type SnippetType = {
@@ -41,8 +40,11 @@ function Page() {
 
     console.log(snippets)
 
+    if (!material) return <div>Loading...</div>;
+
     return (
         <>
+
             <MaterialDetail material={material}/>
 
             {snippets.map(snippet => {

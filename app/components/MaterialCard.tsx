@@ -2,7 +2,6 @@
 import React from 'react'
 import {EyeIcon} from "lucide-react";
 import Link from "next/link";
-import {useEffect, useState} from "react";
 import {MaterialType} from "@/app/(root)/page";
 
 interface MaterialProps {
@@ -37,7 +36,7 @@ const MaterialCard:React.FC<MaterialProps> = ({materials}) => {
                         </p>
                         <div className={"w-full"}>
                             <img src={"/MoreTech logo.enc"} alt={"thumbnail"}
-                                 className={"rounded-1xl startup-card_img"}/>
+                                 className={"rounded-1xl startup-card_img"} />
                         </div>
                     </Link>
                 </div>
