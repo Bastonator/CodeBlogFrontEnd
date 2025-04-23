@@ -1,7 +1,7 @@
 import React from 'react'
 import {SnippetType} from "@/app/(root)/material/[slug]/page";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import {docco} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { docco } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import {
     Accordion,
     AccordionContent,
